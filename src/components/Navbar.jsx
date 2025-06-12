@@ -1,5 +1,8 @@
 import React from "react";
 import { Link, NavLink } from "react-router";
+import { MdShoppingCart } from "react-icons/md";
+import { MdBookmarkAdd } from "react-icons/md";
+
 
 const Navbar = () => {
   return (
@@ -60,10 +63,12 @@ const Navbar = () => {
             <NavLink className={({isActive})=> (isActive ? 'text-indigo-700': '')} to="/about">About</NavLink>
           </li>
           <li>
-            <Link to="/cart">Cart</Link>
+            <NavLink  className={({isActive})=> (isActive ? 'text-indigo-700': '')} to="/cart">
+            <MdShoppingCart size={20}/>
+            </NavLink>
           </li>
           <li>
-            <Link to="/favorites">Favorites</Link>
+            <NavLink  className={({isActive})=> (isActive ? 'text-indigo-700': '')} to="/favorites">Favorites</NavLink>
           </li>
           <li></li>
         </ul>
