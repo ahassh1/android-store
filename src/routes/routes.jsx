@@ -22,15 +22,16 @@ const router = createBrowserRouter([
       {
         path: "/favorites",
         Component: Favorites,
-
+        
       },
       {
         path: "/about",
         element: <About></About>,
       },
-       {
-        path: "/phone-details",
+      {
+        path: "/phone-details/:polash",
         element: <PhoneDetails></PhoneDetails>,
+        loader: () => fetch('../phones.json')
       },
     ],
   },
