@@ -1,11 +1,16 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import PhonesContainer from '../components/PhonesContainer';
+import { useLoaderData } from 'react-router';
 
 const Home = () => {
+    // data
+    const data = useLoaderData()
+    console.log(data);
     return (
         <div>
             <Hero/>
-            <h2>Phones Container</h2>
+            <PhonesContainer phones={data}/>
         </div>
     );
 };

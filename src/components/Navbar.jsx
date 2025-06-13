@@ -6,7 +6,7 @@ import { MdBookmarkAdd } from "react-icons/md";
 
 const Navbar = () => {
   return (
-    <div className="navbar p-0 bg-base-100 shadow-sm">
+    <div className="navbar p-0 bg-base-100 shadow-sm mx-auto px-8 md:px-12 lg:px-16 xl:px-24">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="cursor-pointer mr-2 lg:hidden">
@@ -35,7 +35,8 @@ const Navbar = () => {
              to="/">Home</NavLink >
           </li>
           <li>
-            <NavLink className={({isActive})=> (isActive ? 'text-indigo-700': '')} to="/about">About</NavLink>
+            <NavLink className={({isActive})=> (isActive ? 'text-indigo-700': '')} 
+            to="/about">About</NavLink>
           </li>
           <li>
             <NavLink  className={({isActive})=> (isActive ? 'text-indigo-700': '')} to="/cart">
