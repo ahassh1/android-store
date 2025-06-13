@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Hero from '../components/Hero';
 import PhonesContainer from '../components/PhonesContainer';
 import { useLoaderData } from 'react-router';
-
+ 
 const Home = () => {
     // data
     const data = useLoaderData()

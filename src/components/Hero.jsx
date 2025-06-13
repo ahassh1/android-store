@@ -23,7 +23,12 @@ const Hero = ({handleSearch}) => {
         </p>
 
         <form
-        onSubmit={e => handleSearch(e,searchText)}
+        onSubmit={e => 
+          {
+            handleSearch(e,searchText)
+            // reset input state 
+            setSearchText('')
+          }}
         className="flex flex-col md:flex-row justify-center 
         items-center mb-4 md:px-24">
           <input
@@ -40,8 +45,7 @@ const Hero = ({handleSearch}) => {
           type="submit"
             className="rounded-md px-3.5 py-[9px] m-1 overflow-hidden 
             relative group cursor-pointer border-2 font-medium
-             border-indigo-600 text-indigo-600
-             text-white shadow-gray-700 shadow-md"
+             border-indigo-600 shadow-gray-700 shadow-md"
           >
             <span className="absolute w-64 h-0 transition-all duration-300 
             origin-center rotate-45 -translate-x-20 bg-indigo-600 
