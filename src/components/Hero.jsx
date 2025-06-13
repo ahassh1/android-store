@@ -3,7 +3,7 @@ import BannerImg from "../assets/banner.png";
 
 const Hero = ({handleSearch}) => {
   const [searchText , setSearchText]= useState('')
-  console.log(searchText);
+
   return (
     <div className="py-12">
       <img
@@ -22,17 +22,26 @@ const Hero = ({handleSearch}) => {
           phones of the current time - FlagshipFaceOff See More...
         </p>
 
-        <form className="flex flex-col md:flex-row justify-center items-center mb-4 md:px-24">
+        <form
+        onSubmit={e => handleSearch(e,searchText)}
+        className="flex flex-col md:flex-row justify-center 
+        items-center mb-4 md:px-24">
           <input
           value={searchText}
           onChange={e => setSearchText(e.target.value)}
             type="text"
 
             placeholder="Search phone by name"
-            className="bg-white border border-gray-400 rounder shadow-md w-2/3 h-12 px-4 mb-3 focus:outline-none focus:shadow-outline md:mr-2 md:mb-0"
+            className="bg-white border border-gray-400 rounder 
+            shadow-md w-2/3 h-12 px-4 mb-3 focus:outline-none
+             focus:shadow-outline md:mr-2 md:mb-0"
           />
           <button
-            className="rounded-md px-3.5 py-[9px] m-1 overflow-hidden relative group cursor-pointer border-2 font-medium border-indigo-600 text-indigo-600 text-white shadow-gray-700 shadow-md"
+          type="submit"
+            className="rounded-md px-3.5 py-[9px] m-1 overflow-hidden 
+            relative group cursor-pointer border-2 font-medium
+             border-indigo-600 text-indigo-600
+             text-white shadow-gray-700 shadow-md"
           >
             <span className="absolute w-64 h-0 transition-all duration-300 
             origin-center rotate-45 -translate-x-20 bg-indigo-600 
