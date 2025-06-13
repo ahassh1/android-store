@@ -11,11 +11,12 @@ const Home = () => {
     const handleSearch = (e, text) =>{
         e.preventDefault()
         const searchedPhones = data.filter(phone => 
-            phone.name.toLowerCase().include(text.toLowerCase()) ||
-            phone.brand.toLowerCase().include(text.toLowerCase())
+            phone.name.toLowerCase().split(' ').includes(text.toLowerCase()) ||
+            phone.brand.toLowerCase().split(' ').includes(text.toLowerCase())
     
     )
-        console.log(searchedPhones);
+        // console.log(searchedPhones);
+        setPhones(searchedPhones)
     }
     return (
         <div>
