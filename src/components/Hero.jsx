@@ -27,11 +27,11 @@ const Hero = () => {
             className="bg-white border border-gray-400 rounder shadow-md w-2/3 h-12 px-4 mb-3 focus:outline-none focus:shadow-outline md:mr-2 md:mb-0"
           />
           <button
-            className="rounded-md px-3.5 py-[9px] m-1 overflow-hidden relative group cursor-pointer border-2 font-medium border-indigo-600 text-black  shadow-gray-700 shadow-md"
+            className="rounded-md px-3.5 py-[9px] m-1 overflow-hidden relative group cursor-pointer border-2 font-medium border-indigo-600 text-indigo-600 text-white shadow-gray-700 shadow-md"
           >
             <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-indigo-600 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
             <span className="relative text-indigo-600 transition duration-300 group-hover:text-white ease">
-              View More
+             Search Now
             </span>
           </button>
         </form>
