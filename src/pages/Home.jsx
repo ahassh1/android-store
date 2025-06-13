@@ -6,10 +6,14 @@ import { useLoaderData } from 'react-router';
 const Home = () => {
     // data
     const data = useLoaderData()
-    console.log(data);
+    // console.log(data);
+    const handleSearch = (e, text) =>{
+        e.preventDefault()
+        console.log(text);
+    }
     return (
         <div>
-            <Hero/>
+            <Hero handleSearch={handleSearch}/>
             <PhonesContainer phones={data}/>
         </div>
     );
