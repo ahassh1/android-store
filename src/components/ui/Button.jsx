@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Button = ({label,type}) => {
+const Button = ({label,type,onClick}) => {
     return (
         <div>
              <button
           type= {type}
+          onClick={onclick}
             className="rounded-md px-3.5 py-[9px] m-1 overflow-hidden 
             relative group cursor-pointer border-2 font-medium
              border-indigo-600 shadow-gray-700 shadow-md"

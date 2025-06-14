@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PhoneCard from "../pages/PhoneCard";
+import Button from "./ui/Button";
 
 const PhonesContainer = ({ phones }) => {
   const [displayPhones, setDisplayPhones] = useState([]);
@@ -33,6 +34,17 @@ const PhonesContainer = ({ phones }) => {
           {showAll ? "Show Less" : "Show All"}
         </span>
       </button>
+
+       {/* <Button
+       type=""
+        onClick={() => {
+         setShowAll((prv) => !prv);
+          if (showAll) window.scrollTo(0, 500);
+        }}
+        label={showAll ? "Show Less" : "Show All"}
+       /> */}
+
+  
     </div>
   );
 };

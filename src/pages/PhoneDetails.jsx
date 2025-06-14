@@ -1,16 +1,17 @@
-import React from 'react';
-import { useLoaderData, useParams } from 'react-router';
-import Button from '../components/ui/Button';
- 
-const PhoneDetails = () => {
+import React from "react";
+import { useLoaderData, useParams } from "react-router";
+import Button from "../components/ui/Button";
+import { MdAddShoppingCart, MdBookmarkAdd } from 'react-icons/md'
+import { addFavorite } from "../utils";
 
+const PhoneDetails = () => {
   // console.log(data);
-  const {id} = useParams()
-  const data = useLoaderData()
-    // console.log(id);
-    const singlePhone = data.find(phone => phone.id === parseInt(id))
-    // console.log(singlePhone);
-    const {
+  const { id } = useParams();
+  const data = useLoaderData();
+  // console.log(id);
+  const singlePhone = data.find((phone) => phone.id === parseInt(id));
+  // console.log(singlePhone);
+  const {
     name,
     image,
     brand,
@@ -19,24 +20,37 @@ const PhoneDetails = () => {
     description,
     storage,
     camera_info,
-  } = singlePhone || {}
-    return (
-        <div className='w-full py-12'>
-            <img src={image} className='w-full mx-auto md:w-auto  mb-8' alt='kl' />
+  } = singlePhone || {};
+   
+  const handleFavorite = () =>{
+    addFavorite(singlePhone)
+  }
 
-                  <div className='flex justify-between'>
+  return (
+    <div className="w-full py-12">
+     
+      {/* title and button seciton */}
+      <img src={image} className="w-full mx-auto md:w-auto  mb-8" alt="kl" />
 
-                    <h1 className='text-6xl font-thin mb-8'>
-                    {name}
-                    </h1>
-                     
-                     <Button label='cart'/>
-                     <Button label='favorite'/>
+      <div className="flex justify-between">
+       <div>
+         <h1 className="text-6xl font-thin mb-8">{name}</h1>
+       </div>
 
-                  </div>
 
+        <div className="flex">
+           <Button label={<MdAddShoppingCart/>} />
+        <Button onClick={handleFavorite} label={<MdBookmarkAdd/>} />
         </div>
-    );
+
+      </div>
+
+      {/* details section  */}
+      <div>
+        
+      </div>
+    </div>
+  );
 };
 
 export default PhoneDetails;
