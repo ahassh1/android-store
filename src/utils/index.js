@@ -1,3 +1,4 @@
+// add card form localhost 
 export const getFavorites = () => {
   const favorites = localStorage.getItem("favorites");
   if (favorites) return JSON.parse(favorites);
@@ -12,3 +13,12 @@ export const addFavorite = (phone) => {
 //   console.log(phone);
   localStorage.setItem("favorites", JSON.stringify(phone));
 };
+
+
+// remove card form localhost 
+export const removeFavorite = id =>{
+    const favorites = getFavorites()
+    const remainignFavorites = favorites.filter(phone => phone.id !== id)
+     localStorage.setItem("favorites", JSON.stringify(remainignFavorites))
+
+}
