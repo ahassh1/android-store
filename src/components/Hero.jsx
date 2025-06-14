@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import BannerImg from "../assets/banner.png";
+import Button from "./ui/Button";
 
 const Hero = ({handleSearch}) => {
   const [searchText , setSearchText]= useState('')
@@ -41,20 +42,8 @@ const Hero = ({handleSearch}) => {
             shadow-md w-2/3 h-12 px-4 mb-3 focus:outline-none
              focus:shadow-outline md:mr-2 md:mb-0"
           />
-          <button
-          type="submit"
-            className="rounded-md px-3.5 py-[9px] m-1 overflow-hidden 
-            relative group cursor-pointer border-2 font-medium
-             border-indigo-600 shadow-gray-700 shadow-md"
-          >
-            <span className="absolute w-64 h-0 transition-all duration-300 
-            origin-center rotate-45 -translate-x-20 bg-indigo-600 
-            top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-            <span className="relative text-indigo-600 transition duration-300
-             group-hover:text-white ease">
-             Search Now
-            </span>
-          </button>
+
+            <Button type='submit' label='Search'/>
         </form>
       </div>
     </div>
