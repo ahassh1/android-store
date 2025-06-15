@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLoaderData, useParams } from "react-router";
 import Button from "../components/ui/Button";
 import { MdAddShoppingCart, MdBookmarkAdd } from 'react-icons/md'
-import { addFavorite } from "../utils";
+import { addFavorite, addToCart, getCart } from "../utils";
+import { CartContext } from "../providers/Contexts";
 
 const PhoneDetails = () => {
+
+  const {setCart} = useContext(CartContext)
   // console.log(data);
   const { id } = useParams();
   const data = useLoaderData();
@@ -23,7 +26,17 @@ const PhoneDetails = () => {
   } = singlePhone || {};
    
   const handleFavorite = () =>{
+
+    // save to localStorage for persistency 
+
     addFavorite(singlePhone)
+
+    // update state for instant ui change 
+    setCart(getCart())
+  }
+  
+  const handleCart = () =>{
+    addToCart(singlePhone)    
   }
 
   return (
@@ -39,7 +52,7 @@ const PhoneDetails = () => {
 
 
         <div className="flex">
-           <Button label={<MdAddShoppingCart/>} />
+           <Button onClick={handleCart} label={<MdAddShoppingCart/>} />
         <Button onClick={handleFavorite} label={<MdBookmarkAdd/>} />
         </div>
 

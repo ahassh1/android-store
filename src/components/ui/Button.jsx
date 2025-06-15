@@ -5,7 +5,7 @@ const Button = ({label,type,onClick}) => {
         <div>
              <button
           type= {type}
-          onClick={onclick}
+          onClick={onClick}
             className="rounded-md px-3.5 py-[9px] m-1 overflow-hidden 
             relative group cursor-pointer border-2 font-medium
              border-indigo-600 shadow-gray-700 shadow-md"
