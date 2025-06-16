@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../components/ui/Button';
+import { Link } from 'react-router';
 
 const About = () => {
     return (
@@ -154,7 +155,9 @@ const About = () => {
         </div>
 
         <div className='text-center'>
+        <Link to='/'>
          <Button label='Learn More'/>
+         </Link>
         </div>
       </div>
     </div>
