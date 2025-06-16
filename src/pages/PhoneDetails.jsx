@@ -6,7 +6,6 @@ import { addFavorite, addToCart, getCart } from "../utils";
 import { CartContext } from "../providers/Contexts";
 
 const PhoneDetails = () => {
-
   const {setCart} = useContext(CartContext)
   // console.log(data);
   const { id } = useParams();
@@ -34,7 +33,7 @@ const PhoneDetails = () => {
     // update state for instant ui change 
     setCart(getCart())
   }
-  
+
   const handleCart = () =>{
     addToCart(singlePhone)    
   }

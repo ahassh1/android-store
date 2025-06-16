@@ -42,7 +42,7 @@ const Hero = ({handleSearch}) => {
             shadow-md w-2/3 h-12 px-4 mb-3 focus:outline-none
              focus:shadow-outline md:mr-2 md:mb-0"
           />
-
+          
             <Button type='submit' label='Search'/>
         </form>
       </div>
