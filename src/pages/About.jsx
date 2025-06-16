@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../components/ui/Button';
 
 const About = () => {
     return (
@@ -150,6 +151,10 @@ const About = () => {
             src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
             alt=""
           />
+        </div>
+
+        <div className='text-center'>
+         <Button label='Learn More'/>
         </div>
       </div>
     </div>
