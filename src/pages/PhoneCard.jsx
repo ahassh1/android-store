@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { MdDeleteForever } from "react-icons/md";
 
 
-const PhoneCard = ({ phone, deletable ,handleDelete}) => {
+const PhoneCard = ({ phone, deletable ,handleRemove}) => {
   const { name, image, description, id } = phone || {};
   return (
     <div>
@@ -29,12 +29,17 @@ const PhoneCard = ({ phone, deletable ,handleDelete}) => {
           </div>
         </div>
       </div>
-      (deletable &&
-      <div onClick={() =>handleDelete(id)}  className="absolute -top-2 -right-2 bg-gray-900 p-3 ml-5 rounded-full hover:bg-gray-300 group cursor-pointer">
-        <MdDeleteForever size={20}
-        className="text-gray-100 group-hover:text-gray-900" />
-      </div>
-      )
+       {deletable && (
+            <div
+              onClick={() => handleRemove(id)}
+              className='bg-gray-900 p-3 ml-5 rounded-full hover:bg-gray-300 group  cursor-pointer hover:scale-105 absolute -top-5 -right-5'
+            >
+              <MdDeleteForever
+                size={20}
+                className='text-gray-100 group-hover:text-gray-900'
+              />
+            </div>
+          )}
     </div>
   );
 };
